@@ -18,7 +18,7 @@ public class KnightTest {
                 .defenceLevel(100).hp(1000).maxHP(1000).strength(100).level(1);
         Knight knight = new Knight(stateBuilder.build());
         BlackKnight blackKnight = new BlackKnight(stateBuilder.build());
-        Knight whiteknight = new Knight(stateBuilder.build());
+        Knight whiteKnight = new Knight(stateBuilder.build());
 
         BadLuckChance chance = new BadLuckChance();
 
@@ -26,9 +26,9 @@ public class KnightTest {
         // урон удвоен
         Assert.assertEquals(800, blackKnight.getState().getHP());
 
-        knight.attackEnemy(chance, whiteknight);
+        knight.attackEnemy(chance, whiteKnight);
         // урон обычный
-        Assert.assertEquals(900, whiteknight.getState().getHP());
+        Assert.assertEquals(900, whiteKnight.getState().getHP());
 
     }
 
