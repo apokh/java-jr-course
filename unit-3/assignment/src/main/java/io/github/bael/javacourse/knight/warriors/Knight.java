@@ -20,8 +20,12 @@ public class Knight extends Warrior {
      * @param chance шанс критического удара
      * @param blackKnight тип противника - черный рыцарь
      */
-    public void attackEnemy(Chance chance, BlackKnight blackKnight) {
 
-       
+    public void attackEnemy(Chance chance, BlackKnight blackKnight) {
+        System.out.println("Attacking the enemy! " + blackKnight);
+        int percent = chance.getProbability();
+        Damage damage = new Damage(state.getAttackLevel()+2*state.getStrength(), detectCriticalAttackChance(percent));
+        System.out.println("Attack damage is ! " + damage);
+        blackKnight.receiveAttack(damage);
     }
 }
