@@ -24,7 +24,7 @@ public abstract class Warrior implements Actor {
         System.out.println("Attacking the enemy! " + warrior);
         int percent = chance.getProbability();
         // to do insert damage calculation
-        Damage damage = new Damage(state.getAttackLevel()+state.getStrength(), detectCriticalAttackChance(percent));
+        Damage damage = new Damage(state.getAttackLevel() + state.getStrength(), detectCriticalAttackChance(percent));
         System.out.println("Attack damage is ! " + damage);
         warrior.receiveAttack(damage);
     }
@@ -50,9 +50,8 @@ public abstract class Warrior implements Actor {
         // если удар  критический - утраиваем урон
         int damage;
         if (strike.getIsCritical()) {
-            damage = strike.getValue()*CRITICAL_DAMAGE_RATE - state.getDefenceLevel(); // todo
-        }
-        else {
+            damage = strike.getValue() * CRITICAL_DAMAGE_RATE - state.getDefenceLevel(); // todo
+        } else {
             damage = strike.getValue() - state.getDefenceLevel();
         }
 
