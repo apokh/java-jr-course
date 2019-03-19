@@ -22,13 +22,12 @@ public class Barbarian extends Warrior {
     @Override
     public void attackEnemy(Chance chance, Warrior warrior) {
 
-        int multiplier;
+        int multiplier = 1;
 
         if (state.getHPState() <= RAGE_HEALTH_EDGE){
             System.out.println("Barbarian is furious!");
             multiplier = 5;
         }
-        else multiplier = 1;
 
         System.out.println("Attacking the enemy! " + warrior);
         int percent = chance.getProbability();
